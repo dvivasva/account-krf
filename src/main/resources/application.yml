@@ -1,0 +1,8 @@
+spring:
+  appication:
+    name: account-krf
+  data:
+    mongodb:
+      uri: mongodb+srv://navlag:Fg3UgAroDl8SDVDt@avsavivd.lfqko.mongodb.net/pmactoob?retryWrites=true&w=majority
+server:
+  port: 8093
