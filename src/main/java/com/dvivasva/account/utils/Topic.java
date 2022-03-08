@@ -4,6 +4,7 @@ public interface Topic {
 
         String REQUEST_BUY = "request-buy";
         String FIND_ACCOUNT_ORIGIN="find-account-origin";
-        String RESPONSE_ACCOUNT_ORIGIN="response-account-origin";
-        String RESPONSE_ACCOUNT_TO_WALLET="response-account-to-wallet";
+        String RESPONSE_REQUEST_BUY_BOOT_COIN_PAYMENT ="response-request-buy-boot-coin-payment";
+        String RESPONSE_REQUEST_BUY_BOOT_COIN_WALLET="response-request-buy-boot-coin-wallet";
+
 }

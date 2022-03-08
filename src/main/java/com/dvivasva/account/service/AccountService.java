@@ -30,6 +30,14 @@ public class AccountService {
                 .map(AccountUtil::entityToDto);
 
     }
+    public Mono<AccountDto> update(
+            final Mono<AccountDto> customerDtoMono, final String id) {
+        return iAccountRepository.findById(id)
+                .flatMap(p -> customerDtoMono.map(AccountUtil::dtoToEntity)
+                        .doOnNext(e -> e.setId(id)))
+                .flatMap(iAccountRepository::save)
+                .map(AccountUtil::entityToDto);
+    }
     @Cacheable(cacheNames = RedisCacheConfig.ACCOUNT_CACHE, unless = "#result == null")
     public Mono<AccountDto> findByNumberAccount(String number) {
         logger.info("inside methode find by account ");
